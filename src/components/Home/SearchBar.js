@@ -52,7 +52,7 @@ const SearchBar = () => {
           inputProps={{ "aria-label": "search" }}
         />
         <div className={classes.searchIcon}>
-          <i class="material-icons">search</i>
+          <i className="material-icons">search</i>
         </div>
       </div>
     );
