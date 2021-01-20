@@ -30,7 +30,6 @@ const useStyles = makeStyles((theme) => ({
 const ProductCard = ({ product }) => {
   const classes = useStyles();
 
-
   return (
     <Card className={classes.root}>
       <CardActionArea>
