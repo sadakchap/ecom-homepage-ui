@@ -1,4 +1,6 @@
 import { fade, InputBase, makeStyles } from "@material-ui/core";
+import { useState } from "react";
+import { useProductContext } from "../../context/products";
 
 const useStyles = makeStyles((theme) => ({
   search: {
@@ -40,6 +42,14 @@ const useStyles = makeStyles((theme) => ({
 
 const SearchBar = () => {
     const classes = useStyles();
+    const [searchText, setSearchText] = useState('');
+    const { filterProducts } = useProductContext();
+
+    const handleChange = e => {
+      e.preventDefault();
+      setSearchText(e.target.value);
+      filterProducts(e.target.value);
+    }
 
     return (
       <div className={classes.search}>
@@ -50,6 +60,8 @@ const SearchBar = () => {
             input: classes.inputInput,
           }}
           inputProps={{ "aria-label": "search" }}
+          onChange={handleChange}
+          value={searchText}
         />
         <div className={classes.searchIcon}>
           <i className="material-icons">search</i>

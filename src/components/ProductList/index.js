@@ -21,8 +21,8 @@ const useStyles = makeStyles((theme) => ({
 const ProductList = () => {
   const classes = useStyles();
 
-  const {isLoading, products} = useProductContext();
-
+  const { isLoading, products, filteredProducts } = useProductContext();
+  const productsList = filteredProducts.length ? filteredProducts : products;
   return (
     <>
       <ToastContainer />
@@ -34,7 +34,7 @@ const ProductList = () => {
         )}
         {!isLoading &&
           products.length > 0 &&
-          products.map((prod) => <ProductCard key={prod.id} product={prod} />)}
+          productsList.map((prod) => <ProductCard key={prod.id} product={prod} />)}
       </Grid>
     </>
   );
