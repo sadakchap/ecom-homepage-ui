@@ -1,5 +1,6 @@
 import {
   Card,
+  CardActionArea,
   CardContent,
   CardMedia,
   makeStyles,
@@ -9,6 +10,7 @@ import {
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
+    width: 345,
     margin: theme.spacing(2, 4),
     [theme.breakpoints.down("md")]: {
       margin: theme.spacing(2),
@@ -30,15 +32,17 @@ const ProductCard = ({ product }) => {
 
   return (
     <Card className={classes.root}>
-      <CardMedia
-        component="img"
-        alt={product.name}
-        height="140"
-        image={product.image}
-        title={product.name}
-        className={classes.cardImg}
-      />
-      <CardContent >
+      <CardActionArea >
+        <CardMedia
+          component="img"
+          alt={product.name}
+          height="140"
+          image={product.image}
+          title={product.name}
+          className={classes.cardImg}
+        />
+      </CardActionArea>
+      <CardContent>
         <div className={classes.cardContent}>
           <Typography gutterBottom variant="h6" component="h2">
             {product.name}
@@ -47,9 +51,9 @@ const ProductCard = ({ product }) => {
             ${product.price}
           </Typography>
         </div>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {product.description}
-          </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {product.description}
+        </Typography>
       </CardContent>
     </Card>
   );
