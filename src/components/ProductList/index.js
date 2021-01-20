@@ -6,6 +6,7 @@ import { useProductContext } from "../../context/products";
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(4),
+    justifyContent: "center",
     [theme.breakpoints.down("md")]: {
       padding: theme.spacing(2),
     },
