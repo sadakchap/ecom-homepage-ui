@@ -43,7 +43,7 @@ const ProductList = () => {
       <ToastContainer />
       <Grid container className={classes.root}>
         {isLoading && (
-          <div className={classes.spinnerWrapper} >
+          <div className={classes.spinnerWrapper}>
             <CircularProgress />
           </div>
         )}

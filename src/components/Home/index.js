@@ -5,13 +5,13 @@ import HeroSection from "./HeroSection"
 
 const Home = () => {
     return (
-        <div>
-            <Navbar />
-            <HeroSection />
-            <ProductList />
-            <Footer />
-        </div>
-    )
+      <div>
+        <Navbar />
+        <HeroSection />
+        <ProductList />
+        <Footer />
+      </div>
+    );
 }
 
 export default Home
