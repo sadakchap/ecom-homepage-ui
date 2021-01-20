@@ -1,3 +1,4 @@
+import ProductContextProvider from "../../context/products"
 import Footer from "../Layouts/Footer"
 import Navbar from "../Layouts/Navbar"
 import ProductList from "../ProductList"
@@ -8,7 +9,9 @@ const Home = () => {
       <div>
         <Navbar />
         <HeroSection />
-        <ProductList />
+        <ProductContextProvider>
+          <ProductList />
+        </ProductContextProvider>
         <Footer />
       </div>
     );

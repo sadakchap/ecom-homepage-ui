@@ -1,8 +1,7 @@
 import { CircularProgress, Grid, makeStyles } from "@material-ui/core";
-import axios from "axios";
-import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer} from "react-toastify";
+import { useProductContext } from "../../context/products";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,22 +20,7 @@ const useStyles = makeStyles((theme) => ({
 const ProductList = () => {
   const classes = useStyles();
 
-  const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const url = `${process.env.REACT_APP_MOCK_API_ENDPOINT}/products`;
-    axios
-      .get(url)
-      .then((res) => {
-        setProducts(res.data);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        toast.error(err.message);
-      });
-  }, []);
+  const {isLoading, products} = useProductContext();
 
   return (
     <>
