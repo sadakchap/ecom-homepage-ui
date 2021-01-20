@@ -35,7 +35,7 @@ const Navbar = () => {
           <Button
             color="inherit"
             className={classes.btnText}
-            endIcon={<i class="material-icons">shopping_cart</i>}
+            endIcon={<i className="material-icons">shopping_cart</i>}
           >
             Cart
           </Button>
