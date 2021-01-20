@@ -7,6 +7,9 @@ import { ToastContainer, toast } from "react-toastify";
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(4),
+    [theme.breakpoints.down("md")]: {
+      padding: theme.spacing(2),
+    },
   },
   spinnerWrapper: {
     display: "flex",

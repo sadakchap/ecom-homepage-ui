@@ -9,17 +9,20 @@ import {
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
-    margin: theme.spacing(2, 4)
+    margin: theme.spacing(2, 4),
+    [theme.breakpoints.down("md")]: {
+      margin: theme.spacing(2),
+    },
   },
   cardImg: {
     height: 250,
     objectFit: "contain",
   },
-  cardContent:{
+  cardContent: {
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "center"
-  }
+    alignItems: "center",
+  },
 }));
 
 const ProductCard = ({ product }) => {
