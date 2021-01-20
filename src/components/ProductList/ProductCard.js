@@ -6,6 +6,7 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
+import images from "../../utils/randomImages";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,6 +31,12 @@ const useStyles = makeStyles((theme) => ({
 const ProductCard = ({ product }) => {
   const classes = useStyles();
 
+  const handleImageError = (e) => {
+    e.target.onerror = null;
+    const imageUrl = images[Math.floor(Math.random() + images.length)]
+    e.target.src = imageUrl;
+  };
+
   return (
     <Card className={classes.root}>
       <CardActionArea >
@@ -40,6 +47,7 @@ const ProductCard = ({ product }) => {
           image={product.image}
           title={product.name}
           className={classes.cardImg}
+          onError={handleImageError}
         />
       </CardActionArea>
       <CardContent>
