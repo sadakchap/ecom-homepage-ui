@@ -1,3 +1,4 @@
+import Footer from "../Layouts/Footer"
 import Navbar from "../Layouts/Navbar"
 import ProductList from "../ProductList"
 import HeroSection from "./HeroSection"
@@ -8,6 +9,7 @@ const Home = () => {
             <Navbar />
             <HeroSection />
             <ProductList />
+            <Footer />
         </div>
     )
 }
