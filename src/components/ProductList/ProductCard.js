@@ -6,6 +6,8 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
+import images from "../../utils/images";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
   },
   cardImg: {
     height: 250,
-    objectFit: "contain",
   },
   cardContent: {
     display: "flex",
@@ -30,6 +31,13 @@ const useStyles = makeStyles((theme) => ({
 const ProductCard = ({ product }) => {
   const classes = useStyles();
 
+  const handleImageError = (e) => {
+    console.log('getting fired');
+    e.target.onError = null;
+    const imageUrl = images[Math.floor(Math.random() * images.length) + 1];
+    e.target.src = imageUrl;
+  };
+
   return (
     <Card className={classes.root}>
       <CardActionArea>
@@ -40,6 +48,7 @@ const ProductCard = ({ product }) => {
           image={product.image}
           title={product.name}
           className={classes.cardImg}
+          onError={handleImageError}
         />
       </CardActionArea>
       <CardContent>
